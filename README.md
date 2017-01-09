@@ -34,7 +34,17 @@
     });
 ```
 ###参数说明
-  *background
-    >设置桌面背景
-  *shortcut
-    >桌面图标
+  *background* >设置桌面背景
+  -----------
+  *shortcut*  >桌面图标
+  -----------
+ **shortcut** 属性说明
+| Parameter       | Description
+|-----------------|---------------
+| title             | 设置应用描述
+| icon              | 设置应用图标
+| url               | 窗口的连接地址
+| type              | 窗口打开类型：“OB”:浏览器页签；“IB_NORMAL”:正常窗口；“IB_CUSTOM”:打开自定义的窗口；“IB_FS”:全屏窗口打开
+| width             | 窗口打开的宽度
+| height            | 窗口打开的高度
+------
