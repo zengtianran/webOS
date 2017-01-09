@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WebOS</title>
+    <link href="js/artDialog/css/ui-dialog.css" type="text/css" rel="stylesheet">
+    <link href="../build/style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body id="lxcn">
+<!--IE8及以下版本-->
+<!--[if lte IE 8]>
+<script src="//static.gnw.cn/lib/browser-not-supported/browser.js"></script>
+<![endif]-->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="js/artDialog/dialog-min.js"></script>
+<script type="text/javascript" src="../build/bundle.js"></script>
+<script type="text/javascript">
+     new WebOS({
+        background: "images/default.jpg",
+        logout:function() {
+          location.href='/logout';
+        },
+        pwd : {
+            isPwd : true
+        },
+        shortcut: [
+            {title: "智习课", icon: "images/icon.png", url: "http://www.baidu.com", width: 500, height: 500},
+            {title: "教师管理", icon: "images/icon90.png", url: "http://www.baidu.com"},
+            {title: "学生管理", icon: "images/icon89.png", url: "http://www.baidu.com"},
+            {title: "浏览器页签", icon: "images/icon95.png", type: "OB", url: "http://www.baidu.com"},
+            {title: "正常窗口", icon: "images/icon96.png", type: "IB_NORMAL", url: "http://www.baidu.com"},
+            {title: "自定义窗口", icon: "images/icon97.png", type: "IB_CUSTOM", url: "http://www.baidu.com", width: 1450, height:330},
+            {title: "全屏窗口", icon: "images/icon98.png", type: "IB_FS", url: "http://www.baidu.com"}
+        ]
+    });
+</script>
+</body>
+</html>

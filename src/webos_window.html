@@ -1,0 +1,19 @@
+<div class="window-container window-current" data-id="{{=it.id}}">
+    <div style="height: 100%;" class="window-inner">
+        <div class="title-bar">
+            <img class="title-icon" src="{{=it.icon}}">
+            <span class="title-info">{{=it.title}}</span>
+            <div class="title-handle">
+                <a class="ha-fresh" btn="fresh" href="javascript:;">刷新</a>
+                <a class="ha-min" btn="hide" href="javascript:;">最小化</a>
+                <a class="ha-max" btn="max" href="javascript:;">最大化</a>
+                <a class="ha-revert" btn="revert" href="javascript:;" style="display:none">还原</a>
+                <a class="ha-close" btn="close" href="javascript:;">关闭</a>
+            </div>
+        </div>
+        <div class="window-frame">
+            <div style="z-index:9000000;background:none;height:100%;position:absolute;width:100%;filter:alpha(opacity=0);-moz-opacity:0;opacity:0;display:none"></div>
+            <iframe frameborder="0" allowfullscreen="true" src="{{=it.url}}"></iframe>
+        </div>
+    </div>
+</div>

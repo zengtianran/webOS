@@ -1,0 +1,344 @@
+.form-block *{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+//input样式
+.style-field-input {
+  display: block;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  //禁用样式
+  &[readonly],&[disabled] {
+    opacity: 0.5;
+    cursor: default;
+    background: #fefefe;
+  }
+}
+
+//块表单
+.form-block {
+  .field-group-title {
+    width: 33.3%;
+    text-align: right;
+    padding-right: 15px;
+    font-weight: bold;
+    font-size: 1.2em;
+    line-height: 3em;
+  }
+  .field {
+    margin-bottom: 15px;
+    &:after {
+      content: " ";
+      display: table;
+      clear: both;
+    }
+    .field-label {
+      text-align: right;
+      float: left;
+      width: 33.3%;
+      padding-top: 7px;
+      padding-right: 15px;
+      .required {
+        color: red;
+      }
+    }
+    .field-input-box {
+      float: left;
+      width: 66.6%;
+      .field-input {
+        .style-field-input;
+      }
+      //优化显示
+      textarea, input[type="text"], input[type="password"], div {
+        &.field-input {
+          min-width: 50px;
+          max-width: 300px;
+          width: 100%;
+        }
+      }
+      textarea.field-input {
+        height: auto;
+      }
+      select.field-input {
+        min-width: 50px;
+        max-width: 250px;
+        width: 100%;
+      }
+      //
+      .image-info {
+        position: relative;
+        .thumbnail {
+          width: 180px;
+          height: 172px;
+          margin: 0px 4px 4px 0;
+          position: relative;
+          display: inline-block;
+          &:last-child {
+            margin-right: 0;
+          }
+          .label {
+            width: 170px;
+            display: block;
+            position: absolute;
+            bottom: 4px;
+            left: 4px;
+            cursor: default;
+          }
+          img {
+            max-width: 100%;
+            max-height: 100%;
+          }
+        }
+      }
+      .field-tips {
+        display: block;
+        color: gray;
+        margin-top: 3px;
+      }
+      .field-error {
+        color: red;
+        display: block;
+      }
+      //for radio checkbox
+      label {
+        padding-top: 7px;
+      }
+    }
+  }
+  .form-actions {
+    padding-left: 33.3%;
+  }
+}
+
+//行内表单
+.form-inline {
+  .form-body {
+    display: inline-block;
+  }
+  .field-row {
+    display: inline-block;
+    .field {
+      margin: 0 4px 15px 0;
+      display: inline-block;
+      .field-label {
+        display: inline;
+        line-height: 34px;
+        vertical-align: top;
+        padding-left: 10px;
+        .required {
+          color: red;
+        }
+      }
+      .field-input-box {
+        display: inline-block;
+        .field-input {
+          .style-field-input;
+        }
+        .field-tips {
+          display: none;
+        }
+        .field-error {
+          display: none;
+        }
+        //for radio checkbox
+        label {
+          padding-top: 7px;
+        }
+      }
+    }
+  }
+  .form-actions {
+    display: inline-block;
+    vertical-align: top;
+  }
+}
+
+//混合表单
+.form-mix {
+  .field {
+    vertical-align: top;
+    margin-bottom: 20px;
+    &:after {
+      content: " ";
+      display: table;
+      clear: both;
+    }
+    .field-label {
+      text-align: right;
+      float: left;
+      width: 200px;
+      padding-top: 7px;
+      padding-right: 15px;
+      .required {
+        color: red;
+      }
+    }
+    .field-input-box {
+      float: left;
+      width: 500px;
+      .field-input {
+        .style-field-input;
+      }
+      //优化显示
+      textarea, input[type="text"], input[type="password"] {
+        &.field-input {
+          min-width: 50px;
+          max-width: 700px;
+          width: 100%;
+        }
+      }
+      textarea.field-input {
+        height: auto;
+      }
+      select.field-input {
+        min-width: 50px;
+        max-width: 250px;
+        width: 100%;
+      }
+      //
+      .image-info {
+        position: relative;
+        .thumbnail {
+          width: 180px;
+          height: 172px;
+          margin: 0px 4px 4px 0;
+          position: relative;
+          display: inline-block;
+          &:last-child {
+            margin-right: 0;
+          }
+          .label {
+            width: 170px;
+            display: block;
+            position: absolute;
+            bottom: 4px;
+            left: 4px;
+            cursor: default;
+          }
+        }
+      }
+      .field-tips {
+        display: block;
+        color: gray;
+        margin-top: 3px;
+      }
+      .field-error {
+        color: red;
+      }
+      //for radio checkbox
+      label {
+        padding-top: 7px;
+      }
+    }
+  }
+  .field-sub {
+    .field:first-child {
+      .field-label {
+        width: 200px;
+      }
+    }
+    .field {
+      display: inline-block;
+      .field-label {
+        width: 100px;
+      }
+      .field-input-box {
+        display: inline-block;
+        width: 200px;
+      }
+      //优化显示
+      textarea, input[type="text"], input[type="password"] {
+        &.field-input {
+          min-width: 50px;
+          max-width: 200px;
+          width: 100%;
+        }
+      }
+      textarea.field-input {
+        height: auto;
+      }
+      select.field-input {
+        min-width: 50px;
+        max-width: 250px;
+        width: 100%;
+      }
+    }
+  }
+  .form-actions {
+    padding-left: 200px;
+  }
+}
+
+//树形选择样式
+.tree-select.field {
+  .field-input-box {
+    position: relative;
+    .field-input {
+      padding: 0 5px;
+      overflow: hidden;
+      height: auto !important;
+      min-height: 34px;
+    }
+    .ztree {
+      z-index: 1;
+      position: absolute;
+      background: white;
+      border: 1px solid #ccc;
+      border-top: none;
+      min-width: 150px;
+      max-height: 300px;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+  }
+  .tree-select-item {
+    position: relative;
+    display: inline-block;
+    background: #eee;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    box-shadow: none;
+    color: #333;
+    cursor: default;
+    line-height: 13px;
+    padding: 6px 20px 5px 5px;
+    margin: 3px 5px 3px 0;
+    float: left;
+  }
+  .fa-remove {
+    position: absolute;
+    right: 3px;
+    top: 5px;
+    color: #6b6b6b;
+    &:hover {
+      color: #333;
+    }
+  }
+  //树形选择的禁用状态
+  .g-tree-select.disabled {
+    .field-input {
+      opacity: 0.5;
+      cursor: default;
+      background: #fefefe;
+    }
+    .fa-remove:hover {
+      color: #6b6b6b;
+    }
+  }
+}
+label.error{
+  color: #ff0000;
+}

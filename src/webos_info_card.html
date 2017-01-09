@@ -1,0 +1,15 @@
+<div class="webos-card">
+      <div class="card-close">X</div>
+    <div class="thumbnail">
+      <img src="{{=it.userInfo.avatar}}">
+    </div>
+    <div class="content">
+       <div><h3>{{=it.userInfo.name}}</h3><span>{{=it.userInfo.type}}</span></div>
+       <p>{{=it.userInfo.school}}</p>
+       <p>
+         {{for (var j = 0; j < it.userInfo.class.length; j++) { }}
+           <span>{{= it.userInfo.class[j]}}</span>
+         {{ } }}
+       </p>
+    </div>
+</div>
